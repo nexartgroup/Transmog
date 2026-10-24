@@ -1,0 +1,16 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\FrameXML\UI.xsd">
+   <!--
+      Nur die zwei virtuellen DressUpModel-Vorlagen. Das XML-Attribut "scale"
+      skaliert das MODELL (nicht den Frame): 80x107 mit 4.0 bzw. 221x362 mit
+      2.0 sind der kalibrierte Bildausschnitt. Groessen werden nur uniform
+      geaendert; danach muss SetUnit("player") erneut gerufen werden.
+      Alles Weitere baut der Lua-Code (UI\*.lua).
+   -->
+   <DressUpModel name="TransmogCellModelTemplate" virtual="true" scale="4.0">
+      <Size><AbsDimension x="80" y="107"/></Size>
+   </DressUpModel>
+   <DressUpModel name="TransmogPreviewModelTemplate" virtual="true" scale="2.0" enableMouse="true">
+      <Size><AbsDimension x="221" y="362"/></Size>
+   </DressUpModel>
+</Ui>

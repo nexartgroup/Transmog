@@ -1,0 +1,14 @@
+* text=auto eol=lf
+
+# media: never normalise (the repository ships none; kept for screenshots and future art)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.tga binary
+*.blp binary
+*.ogg binary
+*.mp3 binary
+*.wav binary
+*.ttf binary
+*.otf binary

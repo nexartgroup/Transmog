@@ -1,0 +1,6 @@
+<Bindings>
+   <!-- Anzeigenamen stehen in Core\Boot.lua (BINDING_HEADER_TRANSMOG, BINDING_NAME_TRANSMOG_TOGGLE). -->
+   <Binding name="TRANSMOG_TOGGLE" header="TRANSMOG" runOnUp="false">
+      Transmog.UI.Window.Toggle()
+   </Binding>
+</Bindings>

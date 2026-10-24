@@ -1,0 +1,34 @@
+# generated output (layout renders, coverage, logs)
+tests/out/
+coverage/
+luacov.*
+*.log
+
+# backups and leftovers
+*.bak
+*.orig
+*.rej
+*.tar.gz
+*.zip
+*_old*
+*~
+*.swp
+
+# caches and OS files
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+
+# scratch and probe files
+tmp*
+probe*
+test_zz_*
+
+# editors
+.idea/
+.vscode/
+
+# game data of a player: never publish
+WTF/
+SavedVariables/

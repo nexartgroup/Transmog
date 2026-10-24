@@ -1,0 +1,30 @@
+Transmog (WoW 3.3.5a client addon for mod-transmog-plus)
+Copyright (C) 2026 nexartgroup
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version. It is distributed WITHOUT ANY WARRANTY; see the file LICENSE for
+the full text.
+
+Origin of third-party material
+------------------------------
+Version 2.0 and later is a rewrite from scratch. The following data (no code)
+comes from the older addon of the same name that ships with the AzerothCore
+module mod-transmog-plus (addon/Transmog; the module is licensed AGPL-3.0, the
+addon is a port by malinmr of flekz-games/cmangos-transmog, which states
+GPL-3.0 on its GitHub page):
+
+  * UI/Cameras.lua: the camera calibration numbers (offsets and rotation
+    angles per race and slot) for the tile models, taken over 1:1;
+  * Core/Items.lua: the Spanish (esES) names of the weapon and armour
+    subclasses (strings of the game client).
+
+The AGPL-3.0 is compatible with the licence of both sources.
+
+The addon contains no media files (textures, sounds, fonts). The sound after
+applying is a stock sound of the game client (PlaySound "LOOTWINDOWCOINSOUND");
+all textures are stock client textures. World of Warcraft is a trademark of
+Blizzard Entertainment, Inc.; this project is not affiliated with Blizzard.
+
+Written with the help of Claude (Anthropic's AI assistant).

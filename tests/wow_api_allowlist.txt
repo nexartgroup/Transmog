@@ -1,0 +1,151 @@
+# =============================================================================
+# wow_api_allowlist.txt
+#
+# Globale Namen, die es in World of Warcraft 3.3.5a (WotLK, Interface 30300)
+# WIRKLICH gibt und die das Addon direkt lesen darf. Benutzt von tests/lint_globals.lua.
+#
+# Format: ein Name je Zeile (mehrere durch Leerzeichen sind erlaubt), "#" beginnt
+# einen Kommentar. Eine Zeile "PREFIX*" erlaubt alle Namen mit diesem Praefix.
+#
+# NICHT hier (und damit ein Lint-Fehler beim Lesen):
+#   * die Lua-5.1-Basis (print, pairs, string, table, ...): steht fest im Skript
+#   * Addon-eigene Globals (Transmog, TransmogDB, TransmogWindow, ...): ebenfalls
+#   * alles, was es in 3.3.5a nicht gibt (C_Timer, Mixin, SetShown, SOUNDKIT, ...)
+#   * Lua-4-Altlasten (getglobal, getn, foreach, foreachi, sort): _G[name], #t,
+#     pairs, table.sort benutzen
+#   * unsichere Kandidaten: im Zweifel Util.G("NAME", "Fallback") statt direktem Lesen
+#   * Namen, die nur als Abfrage erlaubt sind (RegisterAddonMessagePrefix,
+#     SetDesaturation): stehen als OPTIONAL in tests/lint_globals.lua
+#
+# Neue Eintraege nur aufnehmen, wenn die Existenz in 3.3.5a sicher ist.
+# =============================================================================
+
+
+# --- Mathematik-Aliasse (math.*) ---------------------------------------------
+abs acos asin atan atan2 ceil cos deg exp floor log log10 max min mod rad random
+sin sqrt tan
+
+
+# --- String-Aliasse und WoW-Stringhelfer -------------------------------------
+format gmatch gsub strbyte strchar strfind strlen strlower strmatch strrep
+strsub strupper
+strconcat strjoin strsplit strtrim tostringall
+
+
+# --- Tabellen-Aliasse ---------------------------------------------------------
+tinsert tremove wipe tContains
+
+
+# --- Zeit ---------------------------------------------------------------------
+date time
+GetTime GetGameTime GetFramerate
+
+
+# --- Fehlerbehandlung, Hooks, Sicherheit --------------------------------------
+geterrorhandler seterrorhandler
+hooksecurefunc securecall issecurevariable
+InCombatLockdown
+debugstack
+
+
+# --- Frames, Fonts, Basis-Oberflaeche -----------------------------------------
+CreateFrame CreateFont
+UIParent WorldFrame
+GetScreenWidth GetScreenHeight
+GetCursorPosition GetCursorInfo ClearCursor CursorHasItem
+GetMouseFocus MouseIsOver
+UIFrameFadeIn UIFrameFadeOut
+UIErrorsFrame
+GameFontNormal GameFontNormalSmall GameFontNormalLarge
+GameFontHighlight GameFontHighlightSmall GameFontHighlightLarge
+GameFontDisable GameFontDisableSmall
+ChatFontNormal NumberFontNormal
+STANDARD_TEXT_FONT
+
+
+# --- Fenster, Dialoge, Slash-Befehle -----------------------------------------
+HideUIPanel ShowUIPanel ToggleFrame UIPanelWindows
+UISpecialFrames
+StaticPopupDialogs StaticPopup_Show StaticPopup_Hide
+SlashCmdList
+GossipFrame
+GameMenuFrame
+# Klassische Dropdown-Helfer (das Addon benutzt Skin.Menu, die Namen sind aber echt)
+ToggleDropDownMenu CloseDropDownMenus
+UIDropDownMenu_Initialize UIDropDownMenu_AddButton UIDropDownMenu_CreateInfo
+UIDropDownMenu_SetText UIDropDownMenu_SetWidth UIDropDownMenu_JustifyText
+UIDropDownMenu_SetSelectedID UIDropDownMenu_SetSelectedValue
+
+
+# --- Tooltips -----------------------------------------------------------------
+GameTooltip ItemRefTooltip
+ShoppingTooltip1 ShoppingTooltip2 ShoppingTooltip3
+ItemRefShoppingTooltip1 ItemRefShoppingTooltip2 ItemRefShoppingTooltip3
+GameTooltip_SetDefaultAnchor GameTooltip_Hide
+# Zeilen-FontStrings des GameTooltip (GameTooltipTextLeft1 ...)
+GameTooltipTextLeft* GameTooltipTextRight*
+
+
+# --- Chat und Kommunikation ---------------------------------------------------
+DEFAULT_CHAT_FRAME ChatFrame1
+ChatEdit_InsertLink ChatEdit_GetActiveWindow
+ChatFrame_AddMessageEventFilter
+SendChatMessage SendAddonMessage
+SetItemRef HandleModifiedItemClick
+
+
+# --- Eingabe ------------------------------------------------------------------
+IsShiftKeyDown IsControlKeyDown IsAltKeyDown IsModifierKeyDown
+IsModifiedClick IsMouseButtonDown
+GetBindingKey GetBindingAction GetBindingText
+
+
+# --- Einheiten ----------------------------------------------------------------
+UnitName UnitRace UnitClass UnitFactionGroup UnitLevel UnitSex UnitGUID
+UnitExists UnitIsPlayer UnitIsUnit UnitIsDeadOrGhost UnitAffectingCombat
+
+
+# --- Gegenstaende und Ausruestung ---------------------------------------------
+GetItemInfo GetItemQualityColor GetItemIcon GetItemCount
+GetInventoryItemLink GetInventoryItemID GetInventoryItemTexture
+GetInventoryItemQuality GetInventorySlotInfo
+GetAuctionItemClasses GetAuctionItemSubClasses
+IsEquippableItem
+DressUpItemLink
+GetMoney
+CloseGossip
+
+
+# --- Spiel-/Addon-Infos -------------------------------------------------------
+GetLocale GetRealmName GetBuildInfo
+GetAddOnMetadata IsAddOnLoaded LoadAddOn
+GetCVar GetCVarBool SetCVar
+IsLoggedIn ReloadUI
+PlaySound PlaySoundFile
+
+
+# --- Farben und Konstanten ----------------------------------------------------
+ITEM_QUALITY_COLORS RAID_CLASS_COLORS
+NORMAL_FONT_COLOR HIGHLIGHT_FONT_COLOR GRAY_FONT_COLOR RED_FONT_COLOR GREEN_FONT_COLOR
+NORMAL_FONT_COLOR_CODE HIGHLIGHT_FONT_COLOR_CODE FONT_COLOR_CODE_CLOSE
+RED_FONT_COLOR_CODE GREEN_FONT_COLOR_CODE GRAY_FONT_COLOR_CODE
+
+
+# --- Blizzard-Globalstrings (GlobalStrings.lua, in der Clientsprache) ---------
+# Allgemeine Knoepfe
+ACCEPT APPLY CANCEL CLOSE DECLINE DELETE NO NONE OKAY RESET SAVE SEARCH UNKNOWN YES
+ARMOR
+# Ausruestungsplaetze (Namen der Inventarplaetze, die transmogbaren 14)
+HEADSLOT SHOULDERSLOT BACKSLOT CHESTSLOT SHIRTSLOT TABARDSLOT
+WRISTSLOT HANDSSLOT WAISTSLOT LEGSSLOT FEETSLOT
+MAINHANDSLOT SECONDARYHANDSLOT RANGEDSLOT
+# Qualitaetsnamen
+ITEM_QUALITY0_DESC ITEM_QUALITY1_DESC ITEM_QUALITY2_DESC ITEM_QUALITY3_DESC
+ITEM_QUALITY4_DESC ITEM_QUALITY5_DESC ITEM_QUALITY6_DESC ITEM_QUALITY7_DESC
+# Ausruestungstypen (equipLoc aus GetItemInfo -> Anzeigename)
+INVTYPE_HEAD INVTYPE_NECK INVTYPE_SHOULDER INVTYPE_CLOAK INVTYPE_CHEST
+INVTYPE_ROBE INVTYPE_BODY INVTYPE_TABARD INVTYPE_WRIST INVTYPE_HAND
+INVTYPE_WAIST INVTYPE_LEGS INVTYPE_FEET INVTYPE_FINGER INVTYPE_TRINKET
+INVTYPE_WEAPON INVTYPE_2HWEAPON INVTYPE_WEAPONMAINHAND INVTYPE_WEAPONOFFHAND
+INVTYPE_SHIELD INVTYPE_HOLDABLE INVTYPE_RANGED INVTYPE_RANGEDRIGHT
+INVTYPE_THROWN INVTYPE_RELIC INVTYPE_AMMO INVTYPE_BAG INVTYPE_QUIVER

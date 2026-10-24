@@ -1,0 +1,56 @@
+## Interface: 30300
+## Title: Transmog
+## Title-deDE: Transmogrifikation
+## Notes: Modern wardrobe UI for the AzerothCore mod-transmog-plus server module.
+## Notes-deDE: Moderne Garderoben-Oberflaeche fuer das AzerothCore-Modul mod-transmog-plus.
+## Author: nexartgroup
+## Version: 2.1
+## X-License: AGPL-3.0-or-later
+## X-Website: https://github.com/nexartgroup/Transmog
+## SavedVariables: TransmogGlobalDB
+## SavedVariablesPerCharacter: TransmogDB, transmogOutfits, transmogSettings
+## X-Requires-Server-Module: mod-transmog-plus
+Locales\Locale.lua
+Locales\enUS_Core.lua
+Locales\enUS_State.lua
+Locales\enUS_Filter.lua
+Locales\enUS_Window.lua
+Locales\enUS_Preview.lua
+Locales\enUS_SlotBar.lua
+Locales\enUS_Grid.lua
+Locales\enUS_FilterBar.lua
+Locales\enUS_Outfits.lua
+Locales\enUS_Options.lua
+Locales\enUS_Features.lua
+Locales\enUS_Boot.lua
+Locales\deDE.lua
+Locales\frFR.lua
+Locales\esES.lua
+Locales\ruRU.lua
+Locales\koKR.lua
+Locales\zhCN.lua
+Locales\zhTW.lua
+Core\Init.lua
+Core\Util.lua
+Core\Events.lua
+Core\DB.lua
+Core\Slots.lua
+Core\Items.lua
+Core\Net.lua
+Core\State.lua
+Core\Filter.lua
+Core\Outfits.lua
+UI\Skin.lua
+UI\Cameras.lua
+UI\Preview.lua
+UI\SlotBar.lua
+UI\Grid.lua
+UI\FilterBar.lua
+UI\OutfitsTab.lua
+UI\Options.lua
+UI\Window.lua
+Features\Tooltips.lua
+Features\Toasts.lua
+Core\Boot.lua
+Transmog.xml
+Bindings.xml
